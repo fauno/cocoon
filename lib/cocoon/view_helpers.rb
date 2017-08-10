@@ -90,7 +90,7 @@ module Cocoon
 
         html_options[:class] = [html_options[:class], "add_fields"].compact.join(' ')
         html_options[:'data-association'] = association.to_s.singularize
-        html_options[:'data-associations'] = association.to_s.pluralize
+        html_options[:'data-associations'] = association
 
         new_object = create_object(f, association, force_non_association_create)
         new_object = wrap_object.call(new_object) if wrap_object.respond_to?(:call)
